@@ -9,7 +9,13 @@ FILE="/opt/config/mod_data/plugins.moonraker.conf"
 
 grep -q "${INC}" "${FILE}" || echo "${INC}" >> "${FILE}"
 
-/opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/ || echo ok
+ARCH=$(uname -m)
+if [ "$ARCH" == "armv7l" ]; then
+    /opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/gcode || echo ok
+else
+    /opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/ || echo ok
+
+fi
 mkdir -p /root/printer_data/gcodes/timelapse/tmp
 ln -s /opt/config/mod_data/plugins/timelapse/timelapse.py /opt/config/mod/.shell/root/moonraker/components/timelapse.py 2>/dev/null || echo ok
 
