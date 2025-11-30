@@ -22,3 +22,10 @@ Execute the command: ```DISABLE_PLUGIN name=timelapse```
 
 Not recommended for use on AD5M/AD5MPro due to insufficient RAM; it is better to use [TelegramBot](https://github.com/ghzserg/zmod/wiki/Telegram_ru).
 
+# Setup
+
+Add ```TIMELAPSE_TAKE_FRAME``` to the timelapse code.
+
+<img width="341" height="396" alt="{E8C4ED6B-388B-40F7-BB5F-CBB402EC7130}" src="https://github.com/user-attachments/assets/8c540101-282b-45e2-9ee9-b07180cd12e5" />
+
+```TIMELAPSE_RENDER``` can be added to the final code or called manually via Fluidd/Mainsail
