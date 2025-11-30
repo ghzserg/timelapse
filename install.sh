@@ -11,7 +11,7 @@ grep -q "${INC}" "${FILE}" || echo "${INC}" >> "${FILE}"
 
 ARCH=$(uname -m)
 if [ "$ARCH" == "armv7l" ]; then
-    ln -s "$DATA_GCODES" /root/printer_data/gcodes || echo ok
+    /opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/gcodes || echo ok
 else
     rm -f /root/printer_data/gcodes/gcodes || echo ok
     rmdir /root/printer_data/gcodes/ || echo ok
