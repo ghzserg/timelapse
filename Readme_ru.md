@@ -24,6 +24,7 @@
 # Настройка 
 
 Добавьте ```TIMELAPSE_TAKE_FRAME``` в код таймлапса.
+
 <img width="341" height="396" alt="{E8C4ED6B-388B-40F7-BB5F-CBB402EC7130}" src="https://github.com/user-attachments/assets/8c540101-282b-45e2-9ee9-b07180cd12e5" />
 
 А ```TIMELAPSE_RENDER``` можно добавить в конечный код или вызвать вручную через Fluidd/Mainsail
