@@ -4,12 +4,12 @@ source /opt/config/mod/.shell/0.sh
 
 cd /opt/config/mod_data/plugins/timelapse/
 
-set -x
-
 if [ -f /ZMOD ]; then
     /opt/config/mod/.shell/zremote.sh /opt/config/mod_data/plugins/timelapse/update.sh
     exit 0
 fi
+
+set -x
 
 update()
 {
