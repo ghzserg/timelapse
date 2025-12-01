@@ -2,26 +2,29 @@
 
 source /opt/config/mod/.shell/0.sh
 
+cd /opt/config/mod_data/plugin/timelapse
+
 set -x
+
+if [ -f /ZMOD ]; then
+    /opt/config/mod/.shell/zremote.sh /opt/config/mod_data/plugin/timelapse/update.sh
+    exit 0
+fi
 
 update()
 {
     ls -Rlh /root/printer_data
 
-    if ! [ -f /ZMOD ]; then
-        a=$(readlink "/root/printer_data/gcodes" 2>/dev/null)
-        if [ "$a" != "$DATA_GCODES" ]; then
-            rm -rf /root/printer_data/gcodes/timelapse
-
-            rmdir  /root/printer_data/gcodes/gcodes
-            rm -f  /root/printer_data/gcodes/gcodes
-
-            rmdir /root/printer_data/gcodes
-            rm -f /root/printer_data/gcodes
-        fi
+    a=$(readlink "/root/printer_data/gcodes" 2>/dev/null)
+    if [ "$a" != "$DATA_GCODES" ]; then
+        rm -rf /root/printer_data/gcodes/timelapse
+        rmdir  /root/printer_data/gcodes/gcodes
+        rm -f  /root/printer_data/gcodes/gcodes
+        rmdir /root/printer_data/gcodes
+        rm -f /root/printer_data/gcodes
+        ln -s "$DATA_GCODES" /root/printer_data/gcodes
     fi
 
-    /opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/gcodes
     a=$(readlink "/opt/config/mod/.shell/root/moonraker/components/timelapse.py" 2>/dev/null)
     if [ "$a" != "/opt/config/mod_data/plugins/timelapse/timelapse.py" ]; then
         ln -s /opt/config/mod_data/plugins/timelapse/timelapse.py /opt/config/mod/.shell/root/moonraker/components/timelapse.py
