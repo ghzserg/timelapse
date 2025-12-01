@@ -27,6 +27,7 @@ update()
 
     a=$(readlink "/opt/config/mod/.shell/root/moonraker/components/timelapse.py" 2>/dev/null)
     if [ "$a" != "/opt/config/mod_data/plugins/timelapse/timelapse.py" ]; then
+        rm -f /opt/config/mod/.shell/root/moonraker/components/timelapse.py
         ln -s /opt/config/mod_data/plugins/timelapse/timelapse.py /opt/config/mod/.shell/root/moonraker/components/timelapse.py
     fi
     mkdir -p /root/printer_data/gcodes/timelapse/tmp
