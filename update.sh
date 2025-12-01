@@ -29,6 +29,7 @@ update()
     if [ "$a" != "/opt/config/mod_data/plugins/timelapse/timelapse.py" ]; then
         ln -s /opt/config/mod_data/plugins/timelapse/timelapse.py /opt/config/mod/.shell/root/moonraker/components/timelapse.py
     fi
+    mkdir -p /root/printer_data/gcodes/timelapse/tmp
 
     ls -Rlh /root/printer_data
 }
