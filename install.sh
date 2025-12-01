@@ -9,17 +9,7 @@ FILE="/opt/config/mod_data/plugins.moonraker.conf"
 
 grep -q "${INC}" "${FILE}" || echo "${INC}" >> "${FILE}"
 
-ARCH=$(uname -m)
-if [ "$ARCH" == "armv7l" ]; then
-    /opt/config/mod/.shell/zremote.sh ln -s "$DATA_GCODES" /root/printer_data/gcodes || echo ok
-else
-    rm -f /root/printer_data/gcodes/gcodes || echo ok
-    rmdir /root/printer_data/gcodes/ || echo ok
-    rm -f /root/printer_data/gcodes || echo ok
-    ln -s "$DATA_GCODES" /root/printer_data/ || echo ok
-fi
-mkdir -p /root/printer_data/gcodes/timelapse/tmp
-ln -s /opt/config/mod_data/plugins/timelapse/timelapse.py /opt/config/mod/.shell/root/moonraker/components/timelapse.py 2>/dev/null || echo ok
+./update.sh
 
 echo "Moonraker Timelapse installed"
 echo "REBOOT" >/tmp/printer
