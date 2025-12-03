@@ -28,17 +28,4 @@ Add ```TIMELAPSE_TAKE_FRAME``` to the timelapse code.
 
 <img width="341" height="396" alt="{E8C4ED6B-388B-40F7-BB5F-CBB402EC7130}" src="https://github.com/user-attachments/assets/8c540101-282b-45e2-9ee9-b07180cd12e5" />
 
-```TIMELAPSE_RENDER``` can be added to the final code or called manually via Fluidd/Mainsail
-
-Example for final code:
-```
-TIMELAPSE_RENDER
-END_PRINT
-```
-
-You can use a timelapse delayed by 30 seconds:
-Example for final code:
-```
-END_PRINT
-END_PRINT_TIMELAPSE_RENDER
-```
+**After finishing printing**, generate a timelapse using Fluidd/Mainsaill or `TIMELAPSE_RENDER`
