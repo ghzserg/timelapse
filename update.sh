@@ -22,6 +22,7 @@ update()
         rm -f  /root/printer_data/gcodes/gcodes
         rmdir /root/printer_data/gcodes
         rm -f /root/printer_data/gcodes
+        mkdir -p /root/printer_data/
         ln -s "$DATA_GCODES" /root/printer_data/gcodes
     fi
 
