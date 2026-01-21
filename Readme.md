@@ -26,7 +26,7 @@ Not recommended for use on AD5M/AD5MPro due to insufficient RAM; it is better to
 
 Add ```TIMELAPSE_TAKE_FRAME``` to the timelapse code.
 
-In Orca: `Printer` -> `Printer Settings` -> `Machine G-code`
+In Orca: `Printer` -> `Printer Settings` -> `Machine G-code` -> `Timelapse G-code`
 
 <img width="341" height="396" alt="{E8C4ED6B-388B-40F7-BB5F-CBB402EC7130}" src="https://github.com/user-attachments/assets/8c540101-282b-45e2-9ee9-b07180cd12e5" />
 
