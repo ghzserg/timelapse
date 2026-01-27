@@ -25,4 +25,10 @@
 
 Добавьте ```TIMELAPSE_TAKE_FRAME``` в код таймлапса.
 
+В Orca: `Профиль принтера` -> `Настройки принтера` -> `G-код принтера` -> `G-код таймлапса`
+
+<img width="341" height="396" alt="{E8C4ED6B-388B-40F7-BB5F-CBB402EC7130}" src="https://github.com/user-attachments/assets/8c540101-282b-45e2-9ee9-b07180cd12e5" />
+
+<img width="1487" height="589" alt="image" src="https://github.com/user-attachments/assets/cc4abb54-d112-498c-b2a2-aebdb7167ae3" />
+
 **После окончания печати**, через Fluidd/Mainsaill или через `TIMELAPSE_RENDER` сгенерируйте таймлапс
